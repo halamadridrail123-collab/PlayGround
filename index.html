@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#071b16">
+  <title>PES — Street Legends</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell">
+    <canvas id="pitch" aria-label="Football match"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="PES home"><span class="brand-mark">P</span><span>PES<span class="brand-dot">.</span></span></a>
+      <div class="match-pill"><span class="live-dot"></span><span id="match-label">STREET LEAGUE · MATCH 01</span></div>
+      <div class="top-actions"><button class="icon-btn" id="sound-btn" aria-label="Toggle sound">♫</button><button class="icon-btn" id="pause-btn" aria-label="Pause game">Ⅱ</button></div>
+    </header>
+    <section class="scoreboard" id="scoreboard" aria-live="polite">
+      <div class="team-score home-score"><span class="team-name">NORTHSIDE</span><span class="score-num" id="home-score">0</span></div>
+      <div class="match-clock"><span id="clock">00:00</span><small>STREET CUP</small></div>
+      <div class="team-score away-score"><span class="score-num" id="away-score">0</span><span class="team-name">RIVALS</span></div>
+    </section>
+    <div class="toast" id="toast" aria-live="polite"></div>
+    <div class="event-banner" id="event-banner"></div>
+    <div class="power-meter" id="power-meter"><span class="power-icon">⚡</span><span><b>BURST</b><i><em id="power-fill"></em></i></span><kbd>Q</kbd></div>
+    <div class="controls-hint" id="controls-hint"><span>WASD</span> MOVE <i>·</i> <span>SPACE</span> PASS <i>·</i> <span>X</span> SHOOT <i>·</i> <span>SHIFT</span> SPRINT</div>
+    <div class="touch-controls" id="touch-controls">
+      <div class="joystick" id="joystick"><div class="joy-ring"></div><div class="joy-knob" id="joy-knob"></div></div>
+      <div class="touch-actions"><button class="touch-btn pass-btn" data-action="pass"><span>PASS</span><small>A</small></button><button class="touch-btn shoot-btn" data-action="shoot"><span>SHOOT</span><small>B</small></button><button class="touch-btn sprint-btn" data-action="sprint"><span>SPRINT</span><small>⚡</small></button></div>
+    </div>
+    <div class="screen" id="menu-screen">
+      <div class="menu-content">
+        <div class="eyebrow"><span></span> THE STREETS ARE YOURS <span></span></div>
+        <h1>OWN THE<br><em>GAME.</em></h1>
+        <p class="hero-copy">Fast feet. Big moments. No second chances.</p>
+        <div class="menu-rule"></div>
+        <div class="mode-card"><div class="mode-icon">🏆</div><div><b>STREET CUP</b><small>5v5 · First to 3 goals · 3 rounds</small></div><span class="mode-arrow">↗</span></div>
+        <button class="primary-btn" id="start-btn"><span>KICK OFF</span><b>→</b></button>
+        <div class="best-line">PERSONAL BEST <b id="best-score">—</b><span>◆</span> <b>LEVEL <i id="menu-level">01</i></b></div>
+        <p class="menu-foot">MOVE <b>W A S D</b> <span>·</span> PASS <b>SPACE</b> <span>·</span> SHOOT <b>X</b></p>
+      </div>
+      <div class="menu-art"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-ball">⚽</div><div class="art-caption">EST. 2025 <span>•</span> PLAY BEAUTIFUL</div></div>
+    </div>
+    <div class="screen modal-screen hidden" id="pause-screen">
+      <div class="modal-card"><div class="modal-kicker">TAKE A BREATHER</div><h2>MATCH<br><em>PAUSED</em></h2><p>The pitch is waiting for you.</p><button class="primary-btn" id="resume-btn"><span>RESUME MATCH</span><b>▶</b></button><button class="text-btn" id="restart-btn">RESTART MATCH</button></div>
+    </div>
+    <div class="screen modal-screen hidden" id="result-screen">
+      <div class="modal-card result-card"><div class="result-stamp" id="result-stamp">FULL TIME</div><h2 id="result-title">WHAT A<br><em>WIN.</em></h2><p id="result-copy">You own this pitch.</p><div class="result-score"><span>NORTHSIDE</span><b id="result-score">3 — 1</b><span>RIVALS</span></div><button class="primary-btn" id="continue-btn"><span>PLAY NEXT ROUND</span><b>→</b></button><button class="text-btn" id="menu-btn">BACK TO MAIN MENU</button></div>
+    </div>
+    <div class="level-chip" id="level-chip">ROUND 01 / 03</div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
